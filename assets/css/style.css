@@ -43,12 +43,30 @@
 }
 
 .character-image {
-    display: inline-block;
-    margin: 0 auto;
-    height: 400px; 
-    width: 430px;
-    max-width: 100%;
+position: relative;
+height: 280px;
+width: 320px;
+margin-top: 50px;
+margin-bottom: 30px;
+border: solid 1px rgb(29, 24, 24);
 }
+
+.character-text {
+     display: block;
+     font-family: 'Trade Winds', cursive;
+     color: black;
+     margin-top: 40px;
+}
+
+.character-image-2 {
+position: relative;
+height: 140px;
+width: 160px;
+margin-top: 50px;
+margin-bottom: 30px;
+border: solid 1px rgb(29, 24, 24);
+}
+
 
 /*----------------- Buttons -----------------*/
 

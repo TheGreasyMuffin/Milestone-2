@@ -24,7 +24,7 @@
 }
 
 .header-text {
-       display: inline;
+       display: inline-block;
     margin-left: 30px;
     margin-top: 20px;
     font-family: 'Mukta', sans-serif;
@@ -32,10 +32,28 @@
     color: white;
 }
 
+.nav-links {
+  margin-left: 100px;
+}
+
+/*----------------- Characters -----------------*/
+.character-design {
+    text-align: center;
+    margin: auto;
+}
+
+.character-image {
+    display: inline-block;
+    margin: 0 auto;
+    height: 400px; 
+    width: 430px;
+    max-width: 100%;
+}
+
 /*----------------- Buttons -----------------*/
 
 .menu-button {
-    display: inline-block;
+    display: inline;
     margin: 23px;
     float: right;
 }

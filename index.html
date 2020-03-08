@@ -9,18 +9,38 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Document</title>
+    <script src="assets/js/gamemanager.js"></script>
+    <script src="assets/js/player.js"></script>
+    <script src="assets/js/enemy.js"></script>
 </head>
 
 <body class="grey-bg">
 	<!--------------------------------Header-------------------------------------------------->
 	<header class="header-background">
 		<div>
-			<p class="logo-text">The Forge</p>
+			<a href="index.html"><p class="logo-text">The Forge</p></a>
 			<img class="header-logo " src="assets/images/logo.png" alt="The Forge">
-            <p class="header-text d-none d-md-inline-block"><i>Do you have the skills required to traverse the world and repair the sword?</i></p>
-            <button class="d-md-none menu-button">Menu</button>
+			<p class="header-text d-none d-md-inline-block">
+				<i>Do you have the skills required to traverse the world and repair the sword?</i></p>
 		</div>
 	</header>
+
+    <characters class="character character-design">
+    <a href="#" onclick="GameManager.setGameStart('Warrior')">
+    <h2>Warrior</h2>
+    <p>Start with high health and damage. Although the warriors attacks are strong, his speed is hindered. This Hero has moderate stamina.</p>
+    </a>
+
+      <a href="#" onclick="GameManager.setGameStart('Ranger')">
+         <h2>Ranger</h2>
+    <p>Start with medium health and damage. Although the ranger has moderate attack damage and health, attack speed it greatly increased. This Hero has high stamina.</p>
+    </a>
+
+      <a href="#" onclick="GameManager.setGameStart('Magician')">
+       <h2>Magician</h2>
+    <p>Start with low health and high damage. Although the magician has low health, he makes up for this with high damage. This hero has moderate stamina.</p>
+    </a>
+    </characters>
 
 	<!--------------------------------Scripts-------------------------------------------------->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

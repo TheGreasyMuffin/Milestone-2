@@ -3,13 +3,13 @@
 /* ----------------- Header -------------== */
 .header-background {
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-color: black;
     align-content: center;
 }
 
 .header-logo { 
-    max-height: 80px;
+    max-height: 70px;
     display: inline-block;
     margin-left: auto;
     padding-bottom: 10px; 

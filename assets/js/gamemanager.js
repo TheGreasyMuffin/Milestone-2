@@ -16,7 +16,7 @@ let GameManager = {
                 break;
         }
         let getInterface = document.querySelector(".character");
-        getInterface.innerHTML = `<div><img src="assets/images/${classType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${classType}</h2><p>Health: ${player.health}</p><p>Speed: ${player.speed}</p><p>Magic: ${player.magic}</p><p>Stamina: ${player.stamina}</p>`;
+        getInterface.innerHTML = `<div><img src="assets/images/${classType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${classType}</h2><p class="player-health">Health: ${player.health}</p><p>Speed: ${player.speed}</p><p>Magic: ${player.magic}</p><p>Stamina: ${player.stamina}</p>`;
 
         let getArena = document.querySelector(".arena");
         getArena.innerHTML = `<a href='index.html'><button class="fight-btn">Choose Again?</button></a></div>`;
@@ -46,11 +46,10 @@ let GameManager = {
                 break;
             case 2:
                 enemy = enemy03;
+
                 break;
         }
-        getArena.innerHTML = `<div><img src="assets/images/${enemy.enemyType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${enemy.enemyType}</h2><p>Health: ${enemy.health}</p><p>Speed: ${enemy.speed}</p><p>Magic: ${enemy.magic}</p><p>Stamina: ${enemy.stamina}</p></div>`;
-
-        getActions.innerHTML = `<div><button>Fight to the Death!</button></div>`;
-
+        getActions.innerHTML = '<a href="#" onclick="PlayerMoves.calcAttack()">Fight to the Death!</a>';
+        getArena.innerHTML = `<div><img src="assets/images/${enemy.enemyType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${enemy.enemyType}</h2><p class="enemy-health">Health: ${enemy.health}</p><p>Speed: ${enemy.speed}</p><p>Magic: ${enemy.magic}</p><p>Stamina: ${enemy.stamina}</p></div>`;
     }
 }

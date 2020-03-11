@@ -49,7 +49,7 @@ let GameManager = {
 
                 break;
         }
-        getActions.innerHTML = '<a href="#" onclick="PlayerMoves.calcAttack()">Fight to the Death!</a>';
+        getActions.innerHTML = '<a href="#" onclick="PlayerMoves.calcAttack()">Attack!/a>';
         getArena.innerHTML = `<div><img src="assets/images/${enemy.enemyType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${enemy.enemyType}</h2><p class="enemy-health">Health: ${enemy.health}</p><p>Speed: ${enemy.speed}</p><p>Magic: ${enemy.magic}</p><p>Stamina: ${enemy.stamina}</p></div>`;
     }
 }

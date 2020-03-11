@@ -19,16 +19,16 @@ let PlayerMoves = {
         let playerAttack = function () {
             let calcBaseDamage;
             if (player.magic > 0) {
-                calcBaseDamage = player.stamina * player.magic / 1000;
+                calcBaseDamage = player.stamina * player.magic / 100 + 10;
             } else {
-                calcBaseDamage = player.stamina * player.speed / 1000;
+                calcBaseDamage = player.stamina * player.speed / 100 + 10;
             }
 
             let offsetDamage = Math.floor(Math.random() * Math.floor(10));
             let calcOutputDamage = calcBaseDamage + offsetDamage;
 
             //Number of hits
-            let numberOfHits = Math.floor(Math.random() * Math.floor(player.speed / 10) / 2) + 1;
+            let numberOfHits = Math.floor(Math.random() * Math.floor(player.stamina / 10) / 2) + 1;
             let attackValues = [calcOutputDamage, numberOfHits];
             return attackValues;
         }
@@ -37,23 +37,27 @@ let PlayerMoves = {
         let enemyAttack = function () {
             let calcBaseDamage;
             if (enemy.magic > 0) {
-                calcBaseDamage = enemy.stamina * enemy.magic / 1000;
+                calcBaseDamage = enemy.stamina * enemy.magic / 100 + 10; 
             } else {
-                calcBaseDamage = enemy.stamina * enemy.speed / 1000;
+                calcBaseDamage = enemy.stamina * enemy.speed / 100 + 10;
             }
 
             let offsetDamage = Math.floor(Math.random() * Math.floor(10));
             let calcOutputDamage = calcBaseDamage + offsetDamage;
 
             //Number of hits
-            let numberOfHits = Math.floor(Math.random() * Math.floor(enemy.speed / 10)) + 1;
+            let numberOfHits = Math.floor(Math.random() * Math.floor(enemy.stamina / 10) / 2) + 1;
             let attackValues = [calcOutputDamage, numberOfHits];
             return attackValues;
         }
 
+
+        // Getting player/Enemy health
         let getPlayerHealth = document.querySelector(".player-health");
         let getEnemyHealth = document.querySelector(".enemy-health");
 
+
+        //Initiate the fight! 
         if (getPlayerSpeed >= getEnemySpeed) {
             let playerAttackValues = playerAttack();
             let totalDamage = playerAttackValues[0] * playerAttackValues[1];
@@ -65,10 +69,12 @@ let PlayerMoves = {
                 getEnemyHealth.innerHTML = `Health: 0`;
             } else {
                 getEnemyHealth.innerHTML = `Health ${enemy.health}`;
+
+                //Enemy Will Attack
                 let enemyAttackValues = enemyAttack();
                 let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
-                enemy.health = player.health - totalDamage;
-                alert(`You hit ${enemyAttackValues[0]} damage ${enemyAttackValues[1]} times.`);
+                player.health = player.health - totalDamage;
+                alert(`Enemy hit ${enemyAttackValues[0]} damage ${enemyAttackValues[1]} times.`);
                 if (player.health <= 0) {
                     alert("You Loose!");
                     getPlayerHealth.innerHTML = `Health: 0`;
@@ -76,6 +82,7 @@ let PlayerMoves = {
                 } else {
                     getPlayerHealth.innerHTML = `Health: ${player.health}`;
                 }
+
             }
         }
     }

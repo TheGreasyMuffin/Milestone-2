@@ -1,11 +1,12 @@
 let player;
 
-function Player(classType, health, speed, magic, stamina) {
+function Player(classType, health, speed, magic, stamina, agility) {
     this.classType = classType;
     this.health = health;
     this.speed = speed;
     this.magic = magic;
     this.stamina = stamina;
+    this.agility = agility;
 }
 
 // Calculating how the fight will work
@@ -28,7 +29,7 @@ let PlayerMoves = {
             let calcOutputDamage = calcBaseDamage + offsetDamage;
 
             //Number of hits
-            let numberOfHits = Math.floor(Math.random() * Math.floor(player.stamina / 10) / 2) + 1;
+            let numberOfHits = Math.floor(Math.random() * Math.floor(player.agility / 10) / 2) + 1;
             let attackValues = [calcOutputDamage, numberOfHits];
             return attackValues;
         }
@@ -46,7 +47,7 @@ let PlayerMoves = {
             let calcOutputDamage = calcBaseDamage + offsetDamage;
 
             //Number of hits
-            let numberOfHits = Math.floor(Math.random() * Math.floor(enemy.stamina / 10) / 2) + 1;
+            let numberOfHits = Math.floor(Math.random() * Math.floor(enemy.agility / 10) / 2) + 1;
             let attackValues = [calcOutputDamage, numberOfHits];
             return attackValues;
         }

@@ -35,10 +35,10 @@ let PlayerMoves = {
         }
 
         //Calculating Enemy Damage 
-        let enemyAttack = function () {
+              let enemyAttack = function () {
             let calcBaseDamage;
-            if (enemy.magic > 0) {
-                calcBaseDamage = enemy.stamina * enemy.magic / 100 + 10; 
+            if (player.magic > 0) {
+                calcBaseDamage = enemy.stamina * enemy.magic / 100 + 10;
             } else {
                 calcBaseDamage = enemy.stamina * enemy.speed / 100 + 10;
             }

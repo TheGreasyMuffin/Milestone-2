@@ -79,6 +79,11 @@ margin-bottom: 30px;
 /*----------------- Buttons -----------------*/
 
 /*Attack Button*/
+.choice-btn {
+    background-color: green;
+    border: 1px solid black;
+    }
+
 .attack-btn {
     width: 100%;
     background: rgb(177, 88, 88);

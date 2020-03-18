@@ -19,7 +19,7 @@ let GameManager = {
         getInterface.innerHTML = `<div><img src="assets/images/${classType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${classType}</h2><p class="player-health">Health: ${player.health}</p><p>Speed: ${player.speed}</p><p>Magic: ${player.magic}</p><p>Stamina: ${player.stamina}</p>`;
 
         let getActions = document.querySelector(".actions");
-        getActions.innerHTML = `<div><a href='index.html' class="choice-btn">Choose Again?</a></div><div><a href='#' onclick='GameManager.setFight()'>Choose this Hero?</a></div>`;
+        getActions.innerHTML = `<div class="choice-btn"><a href='index.html'>Choose Again?</a></div><div class="choice-btn"><a href='#' onclick='GameManager.setFight()'>Choose this Hero?</a></div>`;
 
     },
     setPreFight: function () {

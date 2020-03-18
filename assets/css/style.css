@@ -80,8 +80,12 @@ margin-bottom: 30px;
 
 /*Attack Button*/
 .choice-btn {
-    background-color: green;
-    border: 1px solid black;
+      width: 100%;
+    background: rgb(177, 88, 88);
+    font-family: 'Trade Winds', cursive;
+    height: 40px;
+    font-size: 28px;
+    color: grey;
     }
 
 .attack-btn {

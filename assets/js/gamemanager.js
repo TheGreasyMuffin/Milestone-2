@@ -16,7 +16,7 @@ let GameManager = {
                 break;
         }
         let getInterface = document.querySelector(".character");
-        getInterface.innerHTML = `<div><img src="assets/images/${classType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${classType}</h2><p class="player-health">Health: ${player.health}</p><p>Speed: ${player.speed}</p><p>Magic: ${player.magic}</p><p>Stamina: ${player.stamina}</p>`;
+        getInterface.innerHTML = `<div class="character-text"><img src="assets/images/${classType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${classType}</h2><p class="player-health">Health: ${player.health}</p><p>Speed: ${player.speed}</p><p>Magic: ${player.magic}</p><p>Stamina: ${player.stamina}</p>`;
 
         let getActions = document.querySelector(".actions");
         getActions.innerHTML = `<div class="choice-btn"><a href='index.html'>Choose Again?</a></div><div class="choice-btn"><a href='#' onclick='GameManager.setFight()'>Choose this Hero?</a></div>`;
@@ -51,6 +51,6 @@ let GameManager = {
                 break;
         }
         getActions.innerHTML = '<a href="#" onclick="PlayerMoves.calcAttack()"><div class="attack-btn">Attack!</div></a>';
-        getArena.innerHTML = `<div><img src="assets/images/${enemy.enemyType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${enemy.enemyType}</h2><p class="enemy-health">Health: ${enemy.health}</p><p>Speed: ${enemy.speed}</p><p>Magic: ${enemy.magic}</p><p>Stamina: ${enemy.stamina}</p></div>`;
+        getArena.innerHTML = `<div class="character-text"><img src="assets/images/${enemy.enemyType.toLowerCase()}.png" alt="Character img" class="character-image"><h2>${enemy.enemyType}</h2><p class="enemy-health">Health: ${enemy.health}</p><p>Speed: ${enemy.speed}</p><p>Magic: ${enemy.magic}</p><p>Stamina: ${enemy.stamina}</p></div>`;
     }
 }

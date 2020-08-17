@@ -17,19 +17,37 @@ let PlayerMoves = {
         let getEnemySpeed = enemy.speed;
 
         //Calculating Player Damage 
-        let attack = function (player, enemy) {
+        let playerAttack = function () {
             let calcBaseDamage;
-            if (this.magic > 0) {
-                calcBaseDamage = this.stamina * this.magic / 100 + 10;
+            if (player.magic > 0) {
+                calcBaseDamage = player.stamina * player.magic / 100 + 10;
             } else {
-                calcBaseDamage = this.stamina * this.speed / 100 + 10;
+                calcBaseDamage = player.stamina * player.speed / 100 + 10;
             }
 
             let offsetDamage = Math.floor(Math.random() * Math.floor(10));
             let calcOutputDamage = calcBaseDamage + offsetDamage;
 
             //Number of hits
-            let numberOfHits = Math.floor(Math.random() * Math.floor(this.agility / 10) / 2) + 1;
+            let numberOfHits = Math.floor(Math.random() * Math.floor(player.agility / 10) / 2) + 1;
+            let attackValues = [calcOutputDamage, numberOfHits];
+            return attackValues;
+        }
+
+        //Calculating Enemy Damage 
+        let enemyAttack = function () {
+            let calcBaseDamage;
+            if (enemy.magic > 0) {
+                calcBaseDamage = enemy.stamina * enemy.magic / 100 + 10;
+            } else {
+                calcBaseDamage = enemy.stamina * enemy.speed / 100 + 10;
+            }
+
+            let offsetDamage = Math.floor(Math.random() * Math.floor(10));
+            let calcOutputDamage = calcBaseDamage + offsetDamage;
+
+            //Number of hits
+            let numberOfHits = Math.floor(Math.random() * Math.floor(enemy.agility / 10) / 2) + 1;
             let attackValues = [calcOutputDamage, numberOfHits];
             return attackValues;
         }
@@ -42,7 +60,7 @@ let PlayerMoves = {
 
         //Initiate the fight! 
         if (getPlayerSpeed >= getEnemySpeed) {
-            let playerAttackValues = attack(player);
+            let playerAttackValues = playerAttack();
             let totalDamage = playerAttackValues[0] * playerAttackValues[1];
             enemy.health = enemy.health - totalDamage;
             alert(`You hit ${playerAttackValues[0]} damage ${playerAttackValues[1]} times.`);
@@ -54,7 +72,7 @@ let PlayerMoves = {
                 getEnemyHealth.innerHTML = `Health ${enemy.health}`;
 
                 //Enemy Will Attack
-                let enemyAttackValues = attack(enemy);
+                let enemyAttackValues = enemyAttack();
                 let totalDamage = enemyAttackValues[0] * enemyAttackValues[1];
                 player.health = player.health - totalDamage;
                 alert(`Enemy hit ${enemyAttackValues[0]} damage ${enemyAttackValues[1]} times.`);
